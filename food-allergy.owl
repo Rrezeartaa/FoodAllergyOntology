@@ -1,0 +1,1530 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="food" IRI="http://www.owl-ontologies.com/food.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="icd10" IRI="http://who.org/2008/10/en/icd10.owl#"/>
+    <Prefix name="menus" IRI="http://www.owl-ontologies.com/menus.owl#"/>
+    <Prefix name="owl2xml" IRI="http://www.w3.org/2006/12/owl2-xml#"/>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:AllergyToPeanut"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:AllergyToSoy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:AllergyToTomato"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:AllergyToWheat"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:E73"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:I"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:II"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:III"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:IV"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:IX"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:K90.0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:V"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:VI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:VII"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:VIII"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:VeganDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="icd10:VegetarianDiet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:AllergyToLactose"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:AnimalFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:FatFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:LactoseFreeMilk"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:LactoseFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:LactoseIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:MeatFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:Milk"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:MilkFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:PeanutFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:ProteinFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:SoyFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:TomatoFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="food:WheatFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:AlcoholicDrink"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Almond"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:AnimalOil"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Appetizer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Apple"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Banana"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Barley"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Beef"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Beer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Broccoli"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Butter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Carbohydrate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Cereal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Chicken"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:ChickenEgg"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Chocolate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Cocoa"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Cod"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:DarkChocolate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Dessert"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:DominionLager"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Drink"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Duck"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:DuckEgg"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Egg"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Entree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Falafel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Fat"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Fish"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:GarbanzoBean"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Gluten"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:GlutenFreeGrain"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:GlutenFreeRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:GlutenIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Goose"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Grain"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Hazelnut"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Hops"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Koff"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Lactose"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Lager"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Lentils"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:LiquidGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:MainCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Meat"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:MilkChocolate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Mineral"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:MineralIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Muesli"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:NonAlcoholicDrink"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Nutrient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:OliveOil"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Onion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Pasta"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Peanut"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Pepper"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Pork"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Poultry"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Protein"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeChickenPepperTomato"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeChickenPepperTomatoOnion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeChickenTomato"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeRiceChickenBroccoli"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeTomato"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:RecipeTomatoChicken"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Rice"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Rye"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Salmon"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Salt"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:SideDish"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Soy"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Spaghetti"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Sugar"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:SunflowerOil"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Tofu"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Tomato"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Turkey"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Veal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:VegetableOil"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Vitamin"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Water"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Wheat"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Yeast"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="menus:Yogurt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#test"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:AnimalFreeRecipe"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Recipe"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:AnimalIngredient"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:LactoseFreeMilk"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MilkGroup"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+                    <Class abbreviatedIRI="menus:Lactose"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:LactoseFreeRecipe"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Recipe"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="food:LactoseIngredient"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:LactoseIngredient"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Ingredient"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+                <Class abbreviatedIRI="menus:Lactose"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:MilkFreeRecipe"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Recipe"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:MilkGroup"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="food:TomatoFreeRecipe"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Recipe"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:Tomato"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:DarkChocolate"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Chocolate"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="food:LactoseIngredient"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:DominionLager"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Lager"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:GlutenIngredient"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:GlutenFreeGrain"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Hops"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Water"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Yeast"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="4">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Ingredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:GlutenFreeGrain"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Grain"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+                    <Class abbreviatedIRI="menus:Gluten"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:GlutenFreeRecipe"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Recipe"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:GlutenIngredient"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:GlutenIngredient"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:Ingredient"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+                <Class abbreviatedIRI="menus:Gluten"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeChickenPepperTomato"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                    <Class abbreviatedIRI="menus:Chicken"/>
+                </ObjectSomeValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Pepper"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Tomato"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="3">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeChickenPepperTomatoOnion"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                    <Class abbreviatedIRI="menus:Chicken"/>
+                </ObjectSomeValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Onion"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Pepper"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Tomato"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="4">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeChickenTomato"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                    <Class abbreviatedIRI="menus:Chicken"/>
+                </ObjectSomeValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Tomato"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="2">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeRiceChickenBroccoli"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                    <Class abbreviatedIRI="menus:Tomato"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Broccoli"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Chicken"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Rice"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="3">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Ingredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeTomato"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                    <Class abbreviatedIRI="menus:Tomato"/>
+                </ObjectSomeValuesFrom>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                </ObjectExactCardinality>
+            </ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="menus:RecipeTomatoChicken"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="menus:MainCourse"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+                <Class abbreviatedIRI="menus:Chicken"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+                <Class abbreviatedIRI="menus:Tomato"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="2">
+                <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToPeanut"/>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToPeanut"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Peanut"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToSoy"/>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToSoy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Soy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToTomato"/>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToTomato"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Tomato"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToWheat"/>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:AllergyToWheat"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Wheat"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:E73"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Lactose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:I"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:II"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:III"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:IV"/>
+        <Class abbreviatedIRI="icd10:III"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:IX"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:K90.0"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Gluten"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:V"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:VI"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:VII"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:VIII"/>
+        <Class abbreviatedIRI="icd10:ICD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:VeganDiet"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:AnimalIngredient"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="icd10:VegetarianDiet"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Meat"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:AllergyToLactose"/>
+        <Class abbreviatedIRI="icd10:Allergy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:AllergyToLactose"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="icd10:foodRestriction"/>
+            <Class abbreviatedIRI="menus:Lactose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:AnimalFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:FatFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:MeatFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:Milk"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:Milk"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Lactose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:MilkFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:PeanutFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:ProteinFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:SoyFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:TomatoFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="food:WheatFreeRecipe"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:AlcoholicDrink"/>
+        <Class abbreviatedIRI="menus:Drink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Almond"/>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:AnimalOil"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:AnimalOil"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Appetizer"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Apple"/>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Banana"/>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Barley"/>
+        <Class abbreviatedIRI="menus:Grain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Barley"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Gluten"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Beef"/>
+        <Class abbreviatedIRI="menus:Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Beer"/>
+        <Class abbreviatedIRI="menus:AlcoholicDrink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Broccoli"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Butter"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Butter"/>
+        <Class abbreviatedIRI="menus:AnimalOil"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Carbohydrate"/>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cereal"/>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cereal"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cheese"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cheese"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Lactose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Chicken"/>
+        <Class abbreviatedIRI="menus:Poultry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:ChickenEgg"/>
+        <Class abbreviatedIRI="menus:Egg"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Chocolate"/>
+        <Class abbreviatedIRI="menus:Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Chocolate"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            <Class abbreviatedIRI="menus:Cocoa"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cocoa"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Cod"/>
+        <Class abbreviatedIRI="menus:Fish"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Dessert"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Duck"/>
+        <Class abbreviatedIRI="menus:Poultry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:DuckEgg"/>
+        <Class abbreviatedIRI="menus:Egg"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Egg"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Egg"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Entree"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Falafel"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Fat"/>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Fish"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Fish"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+            <Class abbreviatedIRI="menus:Mineral"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+            <Class abbreviatedIRI="menus:Vitamin"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:GarbanzoBean"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Gluten"/>
+        <Class abbreviatedIRI="menus:Protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Goose"/>
+        <Class abbreviatedIRI="menus:Poultry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Grain"/>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Hazelnut"/>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Hops"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Koff"/>
+        <Class abbreviatedIRI="menus:Lager"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Koff"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            <Class abbreviatedIRI="menus:Barley"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Lactose"/>
+        <Class abbreviatedIRI="menus:Sugar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Lager"/>
+        <Class abbreviatedIRI="menus:Beer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Lentils"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:LiquidGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+        <Class abbreviatedIRI="menus:Nutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MainCourse"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Meat"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Meat"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+            <Class abbreviatedIRI="menus:Protein"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+        <Class abbreviatedIRI="menus:Nutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+        <ObjectComplementOf>
+            <Class abbreviatedIRI="menus:Macronutrient"/>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MilkChocolate"/>
+        <Class abbreviatedIRI="menus:Chocolate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MilkChocolate"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            <Class abbreviatedIRI="food:Milk"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+            <Class abbreviatedIRI="menus:Protein"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Mineral"/>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:MineralIngredient"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Muesli"/>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:NonAlcoholicDrink"/>
+        <Class abbreviatedIRI="menus:Drink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Fat"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:OliveOil"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:OliveOil"/>
+        <Class abbreviatedIRI="menus:VegetableOil"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Onion"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Pasta"/>
+        <Class abbreviatedIRI="menus:Cereal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Pasta"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Gluten"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Peanut"/>
+        <Class abbreviatedIRI="menus:NutSeed"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Pepper"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Pork"/>
+        <Class abbreviatedIRI="menus:Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Poultry"/>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Poultry"/>
+        <Class abbreviatedIRI="menus:Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Poultry"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Protein"/>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Rice"/>
+        <Class abbreviatedIRI="menus:Cereal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Rye"/>
+        <Class abbreviatedIRI="menus:Grain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Salmon"/>
+        <Class abbreviatedIRI="menus:Fish"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Salt"/>
+        <Class abbreviatedIRI="menus:MineralIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:SideDish"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Soy"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Spaghetti"/>
+        <Class abbreviatedIRI="menus:Pasta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Sugar"/>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:SunflowerOil"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:SunflowerOil"/>
+        <Class abbreviatedIRI="menus:VegetableOil"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Tofu"/>
+        <Class abbreviatedIRI="menus:BeanPea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Tofu"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+            <Class abbreviatedIRI="menus:Soy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Tomato"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Turkey"/>
+        <Class abbreviatedIRI="menus:Poultry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Veal"/>
+        <Class abbreviatedIRI="menus:Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetableOil"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetableOil"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Mineral"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Vitamin"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Vitamin"/>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Water"/>
+        <Class abbreviatedIRI="menus:LiquidGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Wheat"/>
+        <Class abbreviatedIRI="menus:Grain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Yeast"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Yogurt"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="menus:Yogurt"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+            <Class abbreviatedIRI="menus:Lactose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+        <Class abbreviatedIRI="menus:MineralIngredient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:AnimalIngredient"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Apple"/>
+        <Class abbreviatedIRI="menus:Cereal"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Carbohydrate"/>
+        <Class abbreviatedIRI="menus:Fat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Carbohydrate"/>
+        <Class abbreviatedIRI="menus:Protein"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Fat"/>
+        <Class abbreviatedIRI="menus:Protein"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:FruitGroup"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:GrainsGroup"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Macronutrient"/>
+        <Class abbreviatedIRI="menus:Micronutrient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MeatBeansGroup"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MilkGroup"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:Mineral"/>
+        <Class abbreviatedIRI="menus:Vitamin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:MineralIngredient"/>
+        <Class abbreviatedIRI="menus:PlantIngredient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="menus:OilsGroup"/>
+        <Class abbreviatedIRI="menus:VegetablesGroup"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="menus:hasMainIngredient"/>
+        <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="menus:hasMainNutrient"/>
+        <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+        <Class abbreviatedIRI="menus:Recipe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="menus:hasIngredient"/>
+        <Class abbreviatedIRI="menus:Ingredient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="menus:hasNutrient"/>
+        <Class abbreviatedIRI="menus:Nutrient"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
