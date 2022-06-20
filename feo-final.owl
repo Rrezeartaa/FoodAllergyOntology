@@ -1,1307 +1,2108 @@
-@prefix : <http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix eo: <http://purl.org/heals/eo/> .
-@prefix feo: <http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix cito: <http://purl.org/spar/cito/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix food: <http://purl.org/heals/food/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix terms: <http://purl.org/dc/terms/> .
-@prefix prov-o: <http://www.w3.org/TR/prov-o/> .
-@prefix schema: <http://schema.org/> .
-@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
-@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix resource: <http://semanticscience.org/resource/> .
-@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
-@prefix SpecificationMetadata: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
-@prefix SpecificationMetadata1: <https://www.omg.org/techprocess/ab/SpecificationMetadata/> .
-@base <http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/"
+     xml:base="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:eo="http://purl.org/heals/eo/"
+     xmlns:feo="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:food="http://purl.org/heals/food/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:prov-o="http://www.w3.org/TR/prov-o/"
+     xmlns:schema="http://schema.org/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:SpecificationMetadata="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+     xmlns:SpecificationMetadata1="https://www.omg.org/techprocess/ab/SpecificationMetadata/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63">
+        <owl:imports rdf:resource="http://purl.org/heals/food/"/>
+        <owl:imports rdf:resource="https://purl.org/heals/eo/1.0.0"/>
+        <rdfs:label>Food Allergy/Diet Ontology</rdfs:label>
+    </owl:Ontology>
+    
 
-<http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63> rdf:type owl:Ontology ;
-                                                                           owl:imports food: ,
-                                                                                       <https://purl.org/heals/eo/1.0.0> ;
-                                                                           rdfs:label "Food Allergy/Diet Ontology" .
 
-#################################################################
-#    Object Properties
-#################################################################
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://purl.org/heals/food/dislikes
-food:dislikes rdfs:subPropertyOf feo:isOpposedBy ;
-              owl:inverseOf feo:dislikedBy .
+    
 
 
-###  http://purl.org/heals/food/forbids
-food:forbids rdfs:subPropertyOf feo:isCharacteristicOf ,
-                                feo:isOpposedBy ;
-             owl:inverseOf feo:forbiddenBy ;
-             owl:propertyDisjointWith feo:allows .
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
 
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
 
-###  http://purl.org/heals/food/hasIngredient
-food:hasIngredient rdfs:subPropertyOf feo:hasCharacteristic ,
-                                      feo:isSupportedBy ;
-                   owl:inverseOf feo:isIngredientOf ;
-                   rdfs:range food:Ingredient .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://purl.org/heals/food/isAllergicTo
-food:isAllergicTo rdfs:subPropertyOf feo:isOpposedBy ;
-                  owl:inverseOf feo:isAllergenFor ;
-                  rdf:type owl:FunctionalProperty .
+    
 
 
-###  http://semanticscience.org/resource/SIO_000061
-resource:SIO_000061 rdf:type owl:ObjectProperty .
+    <!-- http://purl.org/heals/food/dislikes -->
 
+    <rdf:Description rdf:about="http://purl.org/heals/food/dislikes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/dislikedBy"/>
+    </rdf:Description>
+    
 
-###  http://semanticscience.org/resource/SIO_000145
-resource:SIO_000145 rdf:type owl:ObjectProperty .
 
+    <!-- http://purl.org/heals/food/forbids -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/accomplishedGoal
-feo:accomplishedGoal rdf:type owl:ObjectProperty .
+    <rdf:Description rdf:about="http://purl.org/heals/food/forbids">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allows"/>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allowedBy
-feo:allowedBy rdf:type owl:ObjectProperty ;
-              owl:inverseOf feo:allows .
+    <!-- http://purl.org/heals/food/hasIngredient -->
 
+    <rdf:Description rdf:about="http://purl.org/heals/food/hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isIngredientOf"/>
+        <rdfs:range rdf:resource="http://purl.org/heals/food/Ingredient"/>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allows
-feo:allows rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf feo:isCharacteristicOf ,
-                              feo:isSupportedBy .
 
+    <!-- http://purl.org/heals/food/isAllergicTo -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/askedBy
-feo:askedBy rdf:type owl:ObjectProperty .
+    <rdf:Description rdf:about="http://purl.org/heals/food/isAllergicTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAllergenFor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf
-feo:componentOf rdf:type owl:ObjectProperty .
+    <!-- http://semanticscience.org/resource/SIO_000061 -->
 
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000061"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/dislikedBy
-feo:dislikedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain food:Food .
 
+    <!-- http://semanticscience.org/resource/SIO_000145 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy
-feo:forbiddenBy rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000145"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasBudget
-feo:hasBudget rdf:type owl:ObjectProperty ;
-              owl:inverseOf feo:isBudgetFor .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/accomplishedGoal -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/accomplishedGoal"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic
-feo:hasCharacteristic rdf:type owl:ObjectProperty ;
-                      owl:inverseOf feo:isCharacteristicOf ;
-                      rdf:type owl:TransitiveProperty ;
-                      rdfs:range feo:Characteristic .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allowedBy -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasDiet
-feo:hasDiet rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allowedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allows"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasExplanationType
-feo:hasExplanationType rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allows -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/allows">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGoal
-feo:hasGoal rdf:type owl:ObjectProperty .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/askedBy -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrient
-feo:hasNutrient rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf feo:hasCharacteristic ;
-                rdfs:range feo:NutrientMeasurement .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/askedBy"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasParameter
-feo:hasParameter rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf feo:hasCharacteristic ;
-                 rdfs:range feo:Parameter .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrimaryParameter
-feo:hasPrimaryParameter rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf feo:hasParameter .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/dislikedBy -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSecondaryParameter
-feo:hasSecondaryParameter rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf feo:hasParameter .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/dislikedBy">
+        <rdfs:domain rdf:resource="http://purl.org/heals/food/Food"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSupportFor
-feo:hasSupportFor rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/inBudgetFor
-feo:inBudgetFor rdf:type owl:ObjectProperty .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasBudget -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAbout
-feo:isAbout rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasBudget">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isBudgetFor"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAccomplishedBy
-feo:isAccomplishedBy rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAllergenFor
-feo:isAllergenFor rdf:type owl:ObjectProperty ;
-                  rdfs:domain food:Food .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasDiet -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAvailibleIn
-feo:isAvailibleIn rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf feo:hasCharacteristic ,
-                                     feo:isSupportedBy .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasDiet"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isBudgetFor
-feo:isBudgetFor rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasExplanationType -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasExplanationType"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf
-feo:isCharacteristicOf rdf:type owl:ObjectProperty .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGoal -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isDietFor
-feo:isDietFor rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGoal"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInSeason
-feo:isInSeason rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrient -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrient">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isIngredientOf
-feo:isIngredientOf rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf feo:isCharacteristicOf .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasParameter -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy
-feo:isOpposedBy rdf:type owl:ObjectProperty ;
-                owl:inverseOf feo:opposes ;
-                rdf:type owl:TransitiveProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isParameterOfType
-feo:isParameterOfType rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrimaryParameter -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrimaryParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasParameter"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy
-feo:isSupportedBy rdf:type owl:ObjectProperty ;
-                  owl:inverseOf feo:supports ;
-                  rdf:type owl:TransitiveProperty .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSecondaryParameter -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likedBy
-feo:likedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf feo:likes ;
-            rdfs:domain food:Food .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSecondaryParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasParameter"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likes
-feo:likes rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf feo:isSupportedBy ;
-          rdfs:label "likes" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSupportFor -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSupportFor"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/opposes
-feo:opposes rdf:type owl:ObjectProperty .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/inBudgetFor -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/pertainsTo
-feo:pertainsTo rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/inBudgetFor"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommendedBy
-feo:recommendedBy rdf:type owl:ObjectProperty ;
-                  owl:inverseOf feo:recommends .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAbout -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAbout"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommends
-feo:recommends rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf feo:isCharacteristicOf ,
-                                  feo:isSupportedBy .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAccomplishedBy -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports
-feo:supports rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAccomplishedBy"/>
+    
 
 
-#################################################################
-#    Data properties
-#################################################################
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAllergenFor -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCalories
-feo:hasCalories rdf:type owl:DatatypeProperty ;
-                rdfs:domain feo:Characteristic ;
-                rdfs:range xsd:int .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAllergenFor">
+        <rdfs:domain rdf:resource="http://purl.org/heals/food/Food"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCarbohydrateValue
-feo:hasCarbohydrateValue rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf feo:hasNutrientValue .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAvailibleIn -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isAvailibleIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasFatValue
-feo:hasFatValue rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf feo:hasNutrientValue .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isBudgetFor -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGrams
-feo:hasGrams rdf:type owl:DatatypeProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isBudgetFor"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue
-feo:hasNutrientValue rdf:type owl:DatatypeProperty ;
-                     rdfs:domain feo:Characteristic ;
-                     rdfs:range xsd:int .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice
-feo:hasPrice rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:decimal .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isDietFor -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasProteinValue
-feo:hasProteinValue rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf feo:hasNutrientValue .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isDietFor"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSodiumValue
-feo:hasSodiumValue rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf feo:hasNutrientValue .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInSeason -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInSeason"/>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSugarValue
-feo:hasSugarValue rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf feo:hasNutrientValue .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isIngredientOf -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal
-feo:isInternal rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:boolean .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCalorie
-feo:isLowCalorie rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:boolean .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isOpposedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/opposes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCarb
-feo:isLowCarb rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:boolean .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isParameterOfType -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat
-feo:isLowFat rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:boolean .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isParameterOfType"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowProtein
-feo:isLowProtein rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:boolean .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowSodium
-feo:isLowSodium rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:boolean .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likedBy -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportive
-feo:isSupportive rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:boolean .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likes"/>
+        <rdfs:domain rdf:resource="http://purl.org/heals/food/Food"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/requiresFact
-feo:requiresFact rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:boolean .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likes -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/likes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy"/>
+        <rdfs:label>likes</rdfs:label>
+    </owl:ObjectProperty>
+    
 
-#################################################################
-#    Classes
-#################################################################
 
-###  http://purl.obolibrary.org/obo/FOODON_03400645
-obo:FOODON_03400645 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VeganDiet
-                                    ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/opposes -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/opposes"/>
+    
 
-###  http://purl.obolibrary.org/obo/FOODON_03400648
-obo:FOODON_03400648 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VeganDiet
-                                    ] .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/pertainsTo -->
 
-###  http://purl.obolibrary.org/obo/FOODON_03400656
-obo:FOODON_03400656 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/pertainsTo"/>
+    
 
 
-###  http://purl.obolibrary.org/obo/FOODON_03400657
-obo:FOODON_03400657 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommendedBy -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommendedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommends"/>
+    </owl:ObjectProperty>
+    
 
-###  http://purl.obolibrary.org/obo/FOODON_03400658
-obo:FOODON_03400658 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommends -->
 
-###  http://purl.obolibrary.org/obo/FOODON_03400664
-obo:FOODON_03400664 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommends">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportedBy"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://purl.obolibrary.org/obo/FOODON_03400737
-obo:FOODON_03400737 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports"/>
+    
 
-###  http://purl.obolibrary.org/obo/FOODON_03400738
-obo:FOODON_03400738 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
 
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
 
-###  http://purl.obolibrary.org/obo/FOODON_03400739
-obo:FOODON_03400739 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+    </rdf:Description>
+    
 
 
-###  http://purl.obolibrary.org/obo/FOODON_03400741
-obo:FOODON_03400741 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <!-- http://www.w3.org/2004/02/skos/core#memberList -->
 
+    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#memberList">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#member"/>
+    </rdf:Description>
+    
 
-###  http://purl.obolibrary.org/obo/FOODON_03400742
-obo:FOODON_03400742 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://purl.obolibrary.org/obo/FOODON_03400743
-obo:FOODON_03400743 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    
 
 
-###  http://purl.obolibrary.org/obo/FOODON_03400771
-obo:FOODON_03400771 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCalories -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCalories">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://purl.obolibrary.org/obo/FOODON_03400772
-obo:FOODON_03400772 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:PescatarianDiet
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:forbiddenBy ;
-                                      owl:hasValue feo:VegetarianDiet
-                                    ] .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCarbohydrateValue -->
 
-###  http://purl.org/heals/food/Food
-food:Food rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty food:hasIngredient ;
-                            owl:someValuesFrom food:Ingredient
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty feo:isInternal ;
-                            owl:hasValue "true"^^xsd:boolean
-                          ] .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCarbohydrateValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://purl.org/heals/food/Ingredient
-food:Ingredient rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty feo:isInternal ;
-                                  owl:hasValue "true"^^xsd:boolean
-                                ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasFatValue -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasFatValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllergicFoodCharacteristic
-feo:AllergicFoodCharacteristic rdf:type owl:Class ;
-                               rdfs:subClassOf feo:NegativeUserCharacteristic ;
-                               rdfs:label "Allergic Food Characteristic" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGrams -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllowedFoodCharacteristic
-feo:AllowedFoodCharacteristic rdf:type owl:Class ;
-                              rdfs:subClassOf feo:PositiveUserCharacteristic ;
-                              rdfs:label "Allowed Food Characteristic" .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasGrams"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget
-feo:Budget rdf:type owl:Class ;
-           rdfs:subClassOf prov:Plan .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Calorie
-feo:Calorie rdf:type owl:Class ;
-            rdfs:subClassOf feo:NutrientMeasurement ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty feo:hasCalories ;
-                              owl:someValuesFrom xsd:int
-                            ] .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Carbohydrate
-feo:Carbohydrate rdf:type owl:Class ;
-                 rdfs:subClassOf feo:NutrientMeasurement .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic
-feo:Characteristic rdf:type owl:Class ;
-                   rdfs:label "Characteristic" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasProteinValue -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasProteinValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet
-feo:Diet rdf:type owl:Class .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSodiumValue -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DislikeFoodCharacteristic
-feo:DislikeFoodCharacteristic rdf:type owl:Class ;
-                              rdfs:subClassOf feo:NegativeUserCharacteristic ;
-                              rdfs:label "Disliked Food Characteristic" .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSodiumValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedFishProduct
-feo:DriedFishProduct rdf:type owl:Class ;
-                     rdfs:subClassOf obo:FOODON_03400769 ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty feo:forbiddenBy ;
-                                       owl:hasValue feo:PescatarianDiet
-                                     ] .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSugarValue -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasSugarValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasNutrientValue"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedMeatProduct
-feo:DriedMeatProduct rdf:type owl:Class ;
-                     rdfs:subClassOf obo:FOODON_03400769 .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Fat
-feo:Fat rdf:type owl:Class ;
-        rdfs:subClassOf feo:NutrientMeasurement .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/ForbiddenFoodCharacteristic
-feo:ForbiddenFoodCharacteristic rdf:type owl:Class ;
-                                rdfs:subClassOf feo:NegativeUserCharacteristic ;
-                                rdfs:label "Forbidden Food Characteristic" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCalorie -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCalorie">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal
-feo:Goal rdf:type owl:Class ;
-         rdfs:label "Goal" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCarb -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudgetFood
-feo:HighBudgetFood rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty feo:hasPrice ;
-                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                     owl:onDatatype xsd:decimal ;
-                                                                                     owl:withRestrictions ( [ xsd:minInclusive 3.9595
-                                                                                                            ]
-                                                                                                            [ xsd:maxInclusive 1000
-                                                                                                            ]
-                                                                                                          )
-                                                                                   ]
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                   rdfs:subClassOf food:Food ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty feo:componentOf ;
-                                     owl:hasValue feo:HighBudget
-                                   ] ;
-                   rdfs:label "High Budget Food" .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCarb">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieFood
-feo:HighCalorieFood rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty feo:isLowCalorie ;
-                                                                 owl:hasValue "false"^^xsd:boolean
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                    rdfs:subClassOf food:Food ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:componentOf ;
-                                      owl:hasValue feo:HighCalorieDiet
-                                    ] ;
-                    rdfs:label "High Calorie Food" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbFood
-feo:HighCarbFood rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty feo:isLowCarb ;
-                                                              owl:hasValue "false"^^xsd:boolean
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
-                 rdfs:subClassOf food:Food ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty feo:componentOf ;
-                                   owl:hasValue feo:HighCarbDiet
-                                 ] ;
-                 rdfs:label "High Carb Food" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowProtein -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatFood
-feo:HighFatFood rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty feo:isLowFat ;
-                                                             owl:hasValue "false"^^xsd:boolean
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                rdfs:subClassOf food:Food ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty feo:componentOf ;
-                                  owl:hasValue feo:HighFatDiet
-                                ] ;
-                rdfs:label "High Fat Food" .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowProtein">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFolateFood
-feo:HighFolateFood rdf:type owl:Class ;
-                   rdfs:subClassOf food:Food ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty feo:recommendedBy ;
-                                     owl:hasValue feo:PregnancyDiet
-                                   ] ;
-                   rdfs:label "High Folate Food" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowSodium -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowSodium">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinFood
-feo:HighProteinFood rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty feo:isLowProtein ;
-                                                                 owl:hasValue "false"^^xsd:boolean
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                    rdfs:subClassOf feo:HighFolateFood ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty feo:componentOf ;
-                                      owl:hasValue feo:HighProteinDiet
-                                    ] ;
-                    rdfs:label "High Protein Food" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportive -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InBudgetCharacteristic
-feo:InBudgetCharacteristic rdf:type owl:Class ;
-                           rdfs:subClassOf feo:PositiveUserCharacteristic ;
-                           rdfs:label "In Budget Characteristic" .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isSupportive">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InDietCharacteristic
-feo:InDietCharacteristic rdf:type owl:Class ;
-                         rdfs:subClassOf feo:PositiveUserCharacteristic ;
-                         rdfs:label "In Diet Characteristic" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/requiresFact -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/requiresFact">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LikedFoodCharacteristic
-feo:LikedFoodCharacteristic rdf:type owl:Class ;
-                            rdfs:subClassOf feo:PositiveUserCharacteristic ;
-                            rdfs:label "Liked Food Characteristic" .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudgetFood
-feo:LowBudgetFood rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty feo:hasPrice ;
-                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                    owl:onDatatype xsd:decimal ;
-                                                                                    owl:withRestrictions ( [ xsd:minInclusive 0
-                                                                                                           ]
-                                                                                                           [ xsd:maxInclusive 2.557
-                                                                                                           ]
-                                                                                                         )
-                                                                                  ]
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf food:Food ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty feo:componentOf ;
-                                    owl:hasValue feo:LowBudget
-                                  ] ;
-                  rdfs:label "Low Budget Food" .
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieFood
-feo:LowCalorieFood rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty feo:isLowCalorie ;
-                                                                owl:hasValue "true"^^xsd:boolean
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                   rdfs:subClassOf food:Food ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty feo:componentOf ;
-                                     owl:hasValue feo:LowCalorieDiet
-                                   ] ;
-                   rdfs:label "Low Calorie Food" .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400645 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400645">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbFood
-feo:LowCarbFood rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty feo:isLowCarb ;
-                                                             owl:hasValue "true"^^xsd:boolean
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                rdfs:subClassOf food:Food ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty feo:componentOf ;
-                                  owl:hasValue feo:LowCarbDiet
-                                ] ;
-                rdfs:label "Low Carb Food" .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400648 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatFood
-feo:LowFatFood rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty feo:isLowFat ;
-                                                            owl:hasValue "true"^^xsd:boolean
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-               rdfs:subClassOf food:Food ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty feo:componentOf ;
-                                 owl:hasValue feo:LowFatDiet
-                               ] ;
-               rdfs:label "Low Fat Food" .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400648">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinFood
-feo:LowProteinFood rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty feo:isLowProtein ;
-                                                                owl:hasValue "true"^^xsd:boolean
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                   rdfs:subClassOf food:Food ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty feo:componentOf ;
-                                     owl:hasValue feo:LowProteinDiet
-                                   ] ;
-                   rdfs:label "Low Protein Food" .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400656 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400656">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumFood
-feo:LowSodiumFood rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty feo:isLowSodium ;
-                                                               owl:hasValue "true"^^xsd:boolean
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf food:Food ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty feo:componentOf ;
-                                    owl:hasValue feo:LowSodiumDiet
-                                  ] ;
-                  rdfs:label "Low Sodium Food" .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400657 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudgetFood
-feo:MediumBudgetFood rdf:type owl:Class ;
-                     owl:equivalentClass [ owl:intersectionOf ( food:Food
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty feo:hasPrice ;
-                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                       owl:onDatatype xsd:decimal ;
-                                                                                       owl:withRestrictions ( [ xsd:minExclusive 2.557
-                                                                                                              ]
-                                                                                                              [ xsd:maxInclusive 3.9595
-                                                                                                              ]
-                                                                                                            )
-                                                                                     ]
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ] ;
-                     rdfs:subClassOf food:Food ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty feo:componentOf ;
-                                       owl:hasValue feo:MediumBudget
-                                     ] ;
-                     rdfs:label "Medium Budget Food" .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400657">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic
-feo:NegativeUserCharacteristic rdf:type owl:Class ;
-                               rdfs:subClassOf feo:UserCharacteristic ;
-                               rdfs:label "Negative User Characteristic" .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400658 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400658">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement
-feo:NutrientMeasurement rdf:type owl:Class ;
-                        rdfs:subClassOf food:Measurement ;
-                        rdfs:label "Nutrient Measurement" .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400664 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/OutBudgetCharacteristic
-feo:OutBudgetCharacteristic rdf:type owl:Class ;
-                            rdfs:subClassOf feo:NegativeUserCharacteristic ;
-                            rdfs:label "Out Budget Characteristic" .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400664">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter
-feo:Parameter rdf:type owl:Class ;
-              rdfs:subClassOf feo:Characteristic .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400737 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400737">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic
-feo:PositiveUserCharacteristic rdf:type owl:Class ;
-                               rdfs:subClassOf feo:UserCharacteristic ;
-                               rdfs:label "Positive User Characteristic" .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400738 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Protien
-feo:Protien rdf:type owl:Class ;
-            rdfs:subClassOf feo:NutrientMeasurement .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400738">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sodium
-feo:Sodium rdf:type owl:Class ;
-           rdfs:subClassOf feo:NutrientMeasurement .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400739 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400739">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sugar
-feo:Sugar rdf:type owl:Class ;
-          rdfs:subClassOf feo:NutrientMeasurement .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400741 -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/System
-feo:System rdf:type owl:Class ;
-           rdfs:subClassOf prov:Entity .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400741">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemCharacteristic
-feo:SystemCharacteristic rdf:type owl:Class ;
-                         rdfs:subClassOf feo:Characteristic ;
-                         rdfs:label "System Characteristic" .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400742 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400742">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserCharacteristic
-feo:UserCharacteristic rdf:type owl:Class ;
-                       rdfs:subClassOf feo:Characteristic ;
-                       rdfs:label "User Characteristic" .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400743 -->
 
-###  http://www.w3.org/ns/prov#Entity
-prov:Entity rdf:type owl:Class .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400743">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  https://purl.org/heals/eo#Contextual_Knowledge
-<https://purl.org/heals/eo#Contextual_Knowledge> rdf:type owl:Class ;
-                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty feo:isInternal ;
-                                                                       owl:hasValue "false"^^xsd:boolean
-                                                                     ] .
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400771 -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400771">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  https://purl.org/heals/eo#Fact
-<https://purl.org/heals/eo#Fact> rdf:type owl:Class ;
-                                 owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                              owl:unionOf ( feo:PositiveUserCharacteristic
-                                                                                            feo:SystemCharacteristic
-                                                                                          )
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty feo:isCharacteristicOf ;
-                                                                              owl:someValuesFrom feo:Parameter
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty feo:supports ;
-                                                                              owl:someValuesFrom feo:Parameter
-                                                                            ]
-                                                                          ) ;
-                                                       rdf:type owl:Class
-                                                     ] .
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400772 -->
 
-###  https://purl.org/heals/eo#Foil
-<https://purl.org/heals/eo#Foil> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                              owl:unionOf ( [ owl:intersectionOf ( feo:NegativeUserCharacteristic
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty feo:supports ;
-                                                                                                                     owl:someValuesFrom feo:Parameter
-                                                                                                                   ]
-                                                                                                                 ) ;
-                                                                                              rdf:type owl:Class
-                                                                                            ]
-                                                                                            [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                                                                     owl:unionOf ( feo:PositiveUserCharacteristic
-                                                                                                                                   feo:SystemCharacteristic
-                                                                                                                                 )
-                                                                                                                   ]
-                                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                                     owl:onProperty feo:opposes ;
-                                                                                                                     owl:someValuesFrom feo:Parameter
-                                                                                                                   ]
-                                                                                                                 ) ;
-                                                                                              rdf:type owl:Class
-                                                                                            ]
-                                                                                          )
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty feo:isCharacteristicOf ;
-                                                                              owl:someValuesFrom feo:Parameter
-                                                                            ]
-                                                                          ) ;
-                                                       rdf:type owl:Class
-                                                     ] .
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03400772">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-#################################################################
-#    Individuals
-#################################################################
+    <!-- http://purl.org/heals/food/Food -->
 
-###  http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?
-<http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?> rdf:type owl:NamedIndividual ;
-                                                                       feo:hasParameter feo:VeganDiet ;
-                                                                       rdfs:label "What if I was vegan?" .
+    <rdf:Description rdf:about="http://purl.org/heals/food/Food">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food/hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/heals/food/Ingredient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
 
-###  http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?
-<http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?> rdf:type owl:NamedIndividual ;
-                                                                          feo:hasParameter feo:Spring ;
-                                                                          rdfs:label "What if it were spring?" .
+    <!-- http://purl.org/heals/food/Ingredient -->
 
+    <rdf:Description rdf:about="http://purl.org/heals/food/Ingredient">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
 
-###  http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?
-<http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?> rdf:type owl:NamedIndividual ;
-                                                                           feo:askedBy feo:KevinMalone ;
-                                                                           feo:hasParameter feo:LowCalorieDiet ;
-                                                                           rdfs:label "Why follow a low calorie diet?" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllergicFoodCharacteristic -->
 
-###  http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?
-<http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?> rdf:type owl:NamedIndividual ;
-                                                                                 feo:hasParameter feo:Butternut_Squash_Soup ;
-                                                                                 rdfs:label "Why eat Butternut Squash Soup?" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllergicFoodCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic"/>
+        <rdfs:label>Allergic Food Characteristic</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?
-<http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?> rdf:type owl:NamedIndividual ;
-                                                                                                        feo:hasPrimaryParameter feo:Butternut_Squash_Soup ;
-                                                                                                        feo:hasSecondaryParameter feo:Strawberry_Tart ;
-                                                                                                        rdfs:label "Why eat Butternut Squash Soup over a Strawberry Tart?" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllowedFoodCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/AllowedFoodCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+        <rdfs:label>Allowed Food Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn
-feo:Autumn rdf:type owl:NamedIndividual ;
-           resource:SIO_000668 feo:SystemA .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli
-feo:Broccoli rdf:type owl:NamedIndividual .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli_Cheddar_Soup
-feo:Broccoli_Cheddar_Soup rdf:type owl:NamedIndividual ,
-                                   food:Food ;
-                          food:hasIngredient feo:Broccoli ;
-                          rdfs:label "Broccoli Cheddar Soup" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Calorie -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Calorie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasCalories"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash
-feo:Butternut_Squash rdf:type owl:NamedIndividual ;
-                     feo:isAvailibleIn feo:Autumn ;
-                     rdfs:label "Butternut Squash" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Carbohydrate -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup
-feo:Butternut_Squash_Soup rdf:type owl:NamedIndividual ,
-                                   food:Food ;
-                          food:hasIngredient feo:Butternut_Squash ;
-                          feo:hasPrice 12 ;
-                          rdfs:label "Butternut Squash Soup" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Carbohydrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cauliflower
-feo:Cauliflower rdf:type owl:NamedIndividual ,
-                         obo:FOODON_03400644 ;
-                feo:isAvailibleIn feo:Autumn .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic">
+        <rdfs:label>Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/CauliflowerPotatoCurry
-feo:CauliflowerPotatoCurry rdf:type owl:NamedIndividual ,
-                                    food:Food ;
-                           food:hasIngredient feo:Cauliflower ,
-                                              feo:Potato ;
-                           rdfs:label "Cauliflower Potato Curry" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cheese
-feo:Cheese rdf:type owl:NamedIndividual ,
-                    obo:FOODON_03400775 .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DeangeloVickers
-feo:DeangeloVickers rdf:type owl:NamedIndividual ;
-                    feo:accomplishedGoal feo:WeightLoss ;
-                    feo:hasDiet feo:LowCarbDiet ;
-                    rdfs:label "Deangelo Vickers" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DislikeFoodCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DislikeFoodCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic"/>
+        <rdfs:label>Disliked Food Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Dollars
-feo:Dollars rdf:type owl:NamedIndividual .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedFishProduct -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Ham
-feo:Ham rdf:type owl:NamedIndividual ,
-                 obo:FOODON_03400645 .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedFishProduct">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400769"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/forbiddenBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudget
-feo:HighBudget rdf:type owl:NamedIndividual ,
-                        feo:Budget ;
-               rdfs:label "High Budget" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedMeatProduct -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DriedMeatProduct">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400769"/>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieDiet
-feo:HighCalorieDiet rdf:type owl:NamedIndividual ,
-                             feo:Diet ;
-                    rdfs:label "High Calorie Diet" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Fat -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbDiet
-feo:HighCarbDiet rdf:type owl:NamedIndividual ,
-                          feo:Diet ;
-                 rdfs:label "High Carb Diet" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Fat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatDiet
-feo:HighFatDiet rdf:type owl:NamedIndividual ,
-                         feo:Diet ;
-                rdfs:label "High Fat Diet" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/ForbiddenFoodCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/ForbiddenFoodCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic"/>
+        <rdfs:label>Forbidden Food Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinDiet
-feo:HighProteinDiet rdf:type owl:NamedIndividual ,
-                             feo:Diet ;
-                    rdfs:label "High Protien Diet" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/JimHalpert
-feo:JimHalpert rdf:type owl:NamedIndividual ;
-               feo:accomplishedGoal feo:LowerBloodPressure ;
-               feo:hasDiet feo:LowCalorieDiet ;
-               rdfs:label "Jim Halpert" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal">
+        <rdfs:label>Goal</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/KevinMalone
-feo:KevinMalone rdf:type owl:NamedIndividual ;
-                feo:hasDiet feo:LowCalorieDiet ;
-                feo:hasGoal feo:LowerBloodPressure ,
-                            feo:WeightLoss ;
-                rdfs:label "Kevin Malone" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudgetFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudgetFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9595</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudget"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Budget Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudget
-feo:LowBudget rdf:type owl:NamedIndividual ,
-                       feo:Budget ;
-              rdfs:label "Low Budget" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet
-feo:LowCalorieDiet rdf:type owl:NamedIndividual ,
-                            feo:Diet ;
-                   rdfs:label "Low Calorie Diet" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCalorie"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Calorie Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbDiet
-feo:LowCarbDiet rdf:type owl:NamedIndividual ,
-                         feo:Diet ;
-                rdfs:label "Low Carb Diet" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCarb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Carb Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatDiet
-feo:LowFatDiet rdf:type owl:NamedIndividual ,
-                        feo:Diet ;
-               rdfs:label "Low Fat Diet" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinDiet
-feo:LowProteinDiet rdf:type owl:NamedIndividual ,
-                            feo:Diet ;
-                   rdfs:label "Low Protien Diet" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Fat Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumDiet
-feo:LowSodiumDiet rdf:type owl:NamedIndividual ,
-                           feo:Diet ;
-                  rdfs:label "Low Sodium Diet" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFolateFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFolateFood">
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/recommendedBy"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Folate Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerBloodPressure
-feo:LowerBloodPressure rdf:type owl:NamedIndividual ,
-                                feo:Goal ;
-                       rdfs:label "Lower Blood Pressure" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerCholestrol
-feo:LowerCholestrol rdf:type owl:NamedIndividual ,
-                             feo:Goal ;
-                    rdfs:label "Lower Cholestrol" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowProtein"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFolateFood"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Protein Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudget
-feo:MediumBudget rdf:type owl:NamedIndividual ,
-                          feo:Budget ;
-                 rdfs:label "Medium Budget" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InBudgetCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InBudgetCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+        <rdfs:label>In Budget Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MichaelScott
-feo:MichaelScott rdf:type owl:NamedIndividual .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InDietCharacteristic -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PamBeesly
-feo:PamBeesly rdf:type owl:NamedIndividual ;
-              feo:accomplishedGoal feo:WeightLoss ;
-              feo:hasDiet feo:LowCalorieDiet ;
-              rdfs:label "Pam Beesly" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/InDietCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+        <rdfs:label>In Diet Characteristic</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter
-feo:Parameter rdf:type owl:NamedIndividual ,
-                       feo:Characteristic .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LikedFoodCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LikedFoodCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+        <rdfs:label>Liked Food Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet
-feo:PescatarianDiet rdf:type owl:NamedIndividual ,
-                             feo:Diet ;
-                    rdfs:label "Pescatarian Diet" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudgetFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Potato
-feo:Potato rdf:type owl:NamedIndividual ,
-                    obo:FOODON_03400644 .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudgetFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.557</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudget"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Budget Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet
-feo:PregnancyDiet rdf:type owl:NamedIndividual ,
-                           feo:Diet ;
-                  rdfs:label "Preegnancy Diet" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCalorie"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Calorie Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spinach
-feo:Spinach rdf:type owl:NamedIndividual ,
-                     obo:FOODON_03400644 ,
-                     feo:HighFolateFood .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SpinachFritata
-feo:SpinachFritata rdf:type owl:NamedIndividual ,
-                            food:Food ;
-                   food:hasIngredient feo:Spinach ;
-                   rdfs:label "Spinach Frittata" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowCarb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Carb Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring
-feo:Spring rdf:type owl:NamedIndividual .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Fat Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/StanleyHudson
-feo:StanleyHudson rdf:type owl:NamedIndividual ;
-                  feo:accomplishedGoal feo:WeightLoss ;
-                  feo:hasDiet feo:LowCalorieDiet ;
-                  rdfs:label "Stanley Hudson" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry
-feo:Strawberry rdf:type owl:NamedIndividual ,
-                        obo:FOODON_03400644 ;
-               feo:isAvailibleIn feo:Spring .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowProtein"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Protein Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry_Tart
-feo:Strawberry_Tart rdf:type owl:NamedIndividual ,
-                             food:Food ;
-                    food:hasIngredient feo:Strawberry ;
-                    rdfs:label "Strawberry Tart" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumFood -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowSodium"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Sodium Food</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Summer
-feo:Summer rdf:type owl:NamedIndividual .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudgetFood -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sushi
-feo:Sushi rdf:type owl:NamedIndividual ,
-                   food:Food ;
-          food:hasIngredient feo:Tuna ;
-          feo:forbiddenBy feo:PregnancyDiet .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudgetFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/hasPrice"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.557</xsd:minExclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9595</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/componentOf"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudget"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Medium Budget Food</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemA
-feo:SystemA rdf:type owl:NamedIndividual ,
-                     feo:System ;
-            feo:isInSeason feo:Autumn .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserCharacteristic"/>
+        <rdfs:label>Negative User Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Tuna
-feo:Tuna rdf:type owl:NamedIndividual ,
-                  obo:FOODON_03400656 .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserA
-feo:UserA rdf:type owl:NamedIndividual ;
-          food:forbids feo:Tuna ;
-          food:isAllergicTo feo:Broccoli ;
-          feo:hasBudget feo:LowBudget ;
-          feo:likes feo:Cheese .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement">
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Measurement"/>
+        <rdfs:label>Nutrient Measurement</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet
-feo:VeganDiet rdf:type owl:NamedIndividual ,
-                       feo:Diet ;
-              rdfs:label "Vegan Diet" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/OutBudgetCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/OutBudgetCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic"/>
+        <rdfs:label>Out Budget Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet
-feo:VegetarianDiet rdf:type owl:NamedIndividual ,
-                            feo:Diet ;
-                   rdfs:label "Vegetarian Diet" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss
-feo:WeightLoss rdf:type owl:NamedIndividual ,
-                        feo:Goal ;
-               rdfs:label "Weight Loss" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfIWasPregnant
-feo:WhatIfIWasPregnant rdf:type owl:NamedIndividual ;
-                       feo:hasParameter feo:PregnancyDiet ;
-                       rdfs:label "What if I was pregnant?" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserCharacteristic"/>
+        <rdfs:label>Positive User Characteristic</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfItWereSpring
-feo:WhatIfItWereSpring rdf:type owl:NamedIndividual ;
-                       feo:hasParameter feo:Spring ;
-                       rdfs:label "What if it were spring?" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Protien -->
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatButternutSquashSoupOverBroccoliCheddarSoup
-feo:WhyEatButternutSquashSoupOverBroccoliCheddarSoup rdf:type owl:NamedIndividual ;
-                                                     feo:hasPrimaryParameter feo:Butternut_Squash_Soup ;
-                                                     feo:hasSecondaryParameter feo:Broccoli_Cheddar_Soup ;
-                                                     rdfs:label "Why eat Butternut Squash Soup over Broccoli Cheddar Soup?" .
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Protien">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatCauliflowerPotatoCurry
-feo:WhyEatCauliflowerPotatoCurry rdf:type owl:NamedIndividual ;
-                                 feo:hasParameter feo:CauliflowerPotatoCurry ;
-                                 rdfs:label "Why eat Cauliflower Potato Curry?" .
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sodium -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sodium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Winter
-feo:Winter rdf:type owl:NamedIndividual .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sugar -->
 
-#################################################################
-#    Annotations
-#################################################################
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sugar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NutrientMeasurement"/>
+    </owl:Class>
+    
 
-feo:Parameter rdfs:label "Parameter" .
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/System -->
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/System">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemCharacteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+        <rdfs:label>System Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserCharacteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+        <rdfs:label>User Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
+    <!-- https://purl.org/heals/eo#Contextual_Knowledge -->
+
+    <owl:Class rdf:about="https://purl.org/heals/eo#Contextual_Knowledge">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isInternal"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/heals/eo#Fact -->
+
+    <owl:Class rdf:about="https://purl.org/heals/eo#Fact">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/heals/eo#Foil -->
+
+    <rdf:Description rdf:about="https://purl.org/heals/eo#Foil">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/NegativeUserCharacteristic"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/supports"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PositiveUserCharacteristic"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemCharacteristic"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/opposes"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isCharacteristicOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet"/>
+        <rdfs:label>What if I was vegan?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring"/>
+        <rdfs:label>What if it were spring?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?">
+        <askedBy rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/KevinMalone"/>
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+        <rdfs:label>Why follow a low calorie diet?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup"/>
+        <rdfs:label>Why eat Butternut Squash Soup?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?">
+        <hasPrimaryParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup"/>
+        <hasSecondaryParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry_Tart"/>
+        <rdfs:label>Why eat Butternut Squash Soup over a Strawberry Tart?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn">
+        <resource:SIO_000668 rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli_Cheddar_Soup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli_Cheddar_Soup">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli"/>
+        <rdfs:label>Broccoli Cheddar Soup</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash">
+        <isAvailibleIn rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn"/>
+        <rdfs:label>Butternut Squash</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasPrice>
+        <rdfs:label>Butternut Squash Soup</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cauliflower -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cauliflower">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
+        <isAvailibleIn rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/CauliflowerPotatoCurry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/CauliflowerPotatoCurry">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cauliflower"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Potato"/>
+        <rdfs:label>Cauliflower Potato Curry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cheese">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400775"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DeangeloVickers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/DeangeloVickers">
+        <accomplishedGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss"/>
+        <hasDiet rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbDiet"/>
+        <rdfs:label>Deangelo Vickers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Dollars -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Dollars"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Ham -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Ham">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400645"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudget -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighBudget">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget"/>
+        <rdfs:label>High Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCalorieDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>High Calorie Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighCarbDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>High Carb Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFatDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>High Fat Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighProteinDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>High Protien Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/JimHalpert -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/JimHalpert">
+        <accomplishedGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerBloodPressure"/>
+        <hasDiet rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+        <rdfs:label>Jim Halpert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/KevinMalone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/KevinMalone">
+        <hasDiet rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+        <hasGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerBloodPressure"/>
+        <hasGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss"/>
+        <rdfs:label>Kevin Malone</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudget -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudget">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget"/>
+        <rdfs:label>Low Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Low Calorie Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCarbDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Low Carb Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowFatDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Low Fat Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowProteinDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Low Protien Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowSodiumDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Low Sodium Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerBloodPressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerBloodPressure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal"/>
+        <rdfs:label>Lower Blood Pressure</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerCholestrol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowerCholestrol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal"/>
+        <rdfs:label>Lower Cholestrol</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudget -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MediumBudget">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Budget"/>
+        <rdfs:label>Medium Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MichaelScott -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/MichaelScott"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PamBeesly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PamBeesly">
+        <accomplishedGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss"/>
+        <hasDiet rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+        <rdfs:label>Pam Beesly</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Characteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PescatarianDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Pescatarian Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Potato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Potato">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Preegnancy Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spinach -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spinach">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/HighFolateFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SpinachFritata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SpinachFritata">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spinach"/>
+        <rdfs:label>Spinach Frittata</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/StanleyHudson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/StanleyHudson">
+        <accomplishedGoal rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss"/>
+        <hasDiet rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowCalorieDiet"/>
+        <rdfs:label>Stanley Hudson</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
+        <isAvailibleIn rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry_Tart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry_Tart">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Strawberry"/>
+        <rdfs:label>Strawberry Tart</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Summer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Summer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sushi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Sushi">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food:hasIngredient rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Tuna"/>
+        <forbiddenBy rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/SystemA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/System"/>
+        <isInSeason rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Autumn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Tuna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Tuna">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400656"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/UserA">
+        <food:forbids rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Tuna"/>
+        <food:isAllergicTo rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli"/>
+        <hasBudget rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/LowBudget"/>
+        <likes rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Cheese"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VeganDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Vegan Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/VegetarianDiet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Diet"/>
+        <rdfs:label>Vegetarian Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WeightLoss">
+        <rdf:type rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Goal"/>
+        <rdfs:label>Weight Loss</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfIWasPregnant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfIWasPregnant">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/PregnancyDiet"/>
+        <rdfs:label>What if I was pregnant?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfItWereSpring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhatIfItWereSpring">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Spring"/>
+        <rdfs:label>What if it were spring?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatButternutSquashSoupOverBroccoliCheddarSoup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatButternutSquashSoupOverBroccoliCheddarSoup">
+        <hasPrimaryParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Butternut_Squash_Soup"/>
+        <hasSecondaryParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Broccoli_Cheddar_Soup"/>
+        <rdfs:label>Why eat Butternut Squash Soup over Broccoli Cheddar Soup?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatCauliflowerPotatoCurry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/WhyEatCauliflowerPotatoCurry">
+        <hasParameter rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/CauliflowerPotatoCurry"/>
+        <rdfs:label>Why eat Cauliflower Potato Curry?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Winter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Winter"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/Parameter">
+        <rdfs:label>Parameter</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Third SWRL Rule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://purl.org/heals/food/Food"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/f"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/isLowFat"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/f"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2022/4/untitled-ontology-63/f"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
